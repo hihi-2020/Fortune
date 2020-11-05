@@ -1,0 +1,60 @@
+
+
+.container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% auto 25%;
+    grid-template-areas: 
+      "header header header header"
+      "main cookieLeft cookieRight sidebar"
+      "footer footer footer footer";
+      font-family: 'Julee', cursive;
+      
+ 
+}
+
+
+.title{
+    grid-area: header;
+    justify-content: center;
+    text-align: center;
+    font-size: 5em;
+}
+
+
+
+.leftCookie{
+background-color: brown;  
+  border-style: solid;
+    border-color: black;
+    margin-top: 50%;
+    height: 100px;
+    width: 50px;
+  
+    grid-area: cookieLeft;
+    justify-self: end;
+ 
+   
+
+}
+
+.rightCookie{
+    background-color: brown;
+    border-style: solid;
+    border-color: black;
+    margin-top: 50%;
+    width: 50px;
+    height: 100px;
+  
+    grid-area: cookieRight;
+    justify-content: start;
+    
+
+}
+
+.footer{
+    grid-area: footer;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50%;
+}
