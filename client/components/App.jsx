@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class App extends React.Component { 
 
   state ={
@@ -14,16 +15,18 @@ class App extends React.Component {
     
   }
 
-
- render() {
+  
+  render() {
+    const leftCookie = <img src="leftCookie.png"/>
+    const rightCookie = <img src="rightCookie.png"/>
     return (
       
       <div  onClick={this.clickHandler} className= "container">
         <h2 className='title'>FORTUNE COOKIE</h2>
     
-        <div className={this.state.isOpen ? 'leftCookieOpen' :'leftCookieClosed'}>  left cookie</div>
+        <div className={this.state.isOpen ? 'leftCookieOpen' :'leftCookieClosed'}> {leftCookie} </div>
         {this.state.isOpen && <div className='fortune'>This is your fortune</div>}
-        <div className={this.state.isOpen?'rightCookieOpen' : 'rightCookieClosed'}>right cookie</div>
+    <div className={this.state.isOpen?'rightCookieOpen' : 'rightCookieClosed'}>{rightCookie}</div>
 
         <footer className='footer'>Footer</footer>
       
