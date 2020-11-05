@@ -3,57 +3,17 @@ import React from 'react'
 class App extends React.Component { 
 
   state ={
-    style: {
-      backgroundColor: 'brown', 
-      borderStyle: 'solid',
-      borderColor: 'black',
-      height: '100px',
-      width: '50px',
-      gridArea: 'cookieLeft',
-      justifySelf: 'end'
-    },
-    style2:{
-      backgroundColor: 'brown', 
-      borderStyle: 'solid',
-      borderColor: 'black',
-      height: '100px',
-      width: '50px',
-      gridArea: 'cookieRight',
-      justifySelf: 'start'
-  
-    }
+    isOpen:false
   }
 
   clickHandler = () => {
     console.log('click')
     this.setState({
-       style: {
-         ...this.state.style,
-         gridArea:'main',
-         justifySelf: 'start'
-       },
-       style2: {
-        ...this.state.style2,
-        gridArea: 'sidebar',
-        justifySelf: 'end'
-       }
+      isOpen:true
     })
+    
   }
 
-  // clickHandlerRight = () =>{
-  //   this.setState({
-  //     style2: {
-  //       ...this.state.style2,
-  //       gridArea: 'sidebar',
-  //       justifySelf: 'end'
-  //     }
-  //  })
-  // }
-
-  // onclickFunc = ()=>{
-  //   this.clickHandlerLeft();
-  //   this.clickHandlerRight();
-  // }
 
  render() {
     return (
@@ -61,9 +21,10 @@ class App extends React.Component {
       <div  onClick={this.clickHandler} className= "container">
         <h2 className='title'>FORTUNE COOKIE</h2>
     
-        <div style={this.state.style} className='leftCookie'>  left cookie</div>
-        <h2 className='fortune'>This is your fortune</h2>
-        <div style={this.state.style2}className='rightCookie'>right cookie</div>
+        <div className={this.state.isOpen ? 'leftCookieOpen' :'leftCookieClosed'}>  left cookie</div>
+        {this.state.isOpen && <div className='fortune'>This is your fortune</div>}
+        <div className={this.state.isOpen?'rightCookieOpen' : 'rightCookieClosed'}>right cookie</div>
+
         <footer className='footer'>Footer</footer>
       
       </div>

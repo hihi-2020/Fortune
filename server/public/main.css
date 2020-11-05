@@ -2,11 +2,11 @@
 
 .container{
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: [first] 25%  [line2]25% [line3]25% [line4]25% [end];
     grid-template-rows: 25% auto 25%;
     grid-template-areas: 
       "header header header header"
-      "main cookieLeft cookieRight sidebar"
+      "farLeft cookieLeft cookieRight farRight"
       "footer footer footer footer";
       font-family: 'Julee', cursive;
       
@@ -21,35 +21,57 @@
     font-size: 5em;
 }
 
-
-
-.leftCookie{
-background-color: brown;  
+.leftCookieOpen{
+    background-color: brown;  
   border-style: solid;
     border-color: black;
     margin-top: 50%;
     height: 100px;
     width: 50px;
-  
-    grid-area: cookieLeft;
+    grid-area: farLeft;
     justify-self: end;
-    z-index: 5;
- 
-   
 
 }
 
-.rightCookie{
+.rightCookieOpen{
     background-color: brown;
     border-style: solid;
     border-color: black;
     margin-top: 50%;
     width: 50px;
     height: 100px;
-  
-    grid-area: cookieRight;
+    grid-area: farRight;
+    justify-content: end;
+   
+}
+
+
+.leftCookieClosed{
+background-color: brown;  
+  border-style: solid;
+    border-color: black;
+    margin-top: 50%;
+    height: 100px;
+    width: 50px;
+    grid-area: cookieLeft;
+    justify-self: end;
+   
+   
+   
+
+}
+
+.rightCookieClosed{
+    background-color: brown;
+    border-style: solid;
+    border-color: black;
+    margin-top: 50%;
+    width: 50px;
+    height: 100px;
+    grid-area: cookieRight ;
     justify-content: start;
-    z-index: 5;
+    
+    
     
 
 }
@@ -61,10 +83,14 @@ background-color: brown;
     margin-top: 50%;
 }
 
-
-/* .fortune{
+.fortune{
     z-index: -5;
-    grid-area: cookieLeft cookie;
+    grid-column-start: line2;
+    grid-column-end: line4;
+    text-align: center;
+    margin-top: 200px;
 
 
-} */
+
+
+} 
