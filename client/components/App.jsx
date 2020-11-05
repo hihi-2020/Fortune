@@ -62,6 +62,7 @@ class App extends React.Component {
         <h2 className='title'>FORTUNE COOKIE</h2>
     
         <div style={this.state.style} className='leftCookie'>  left cookie</div>
+        <h2 className='fortune'>This is your fortune</h2>
         <div style={this.state.style2}className='rightCookie'>right cookie</div>
         <footer className='footer'>Footer</footer>
       
