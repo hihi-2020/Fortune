@@ -5,9 +5,25 @@
     "mp3"
   ],
   "text":[
-    "fortune",
-    "fortune", 
-    "fortune"
+    "The fortune you seek is in another cookie.",
+    "You will be hungry again in an hour.", 
+    "Error 404 : Fortune not found...",
+    "Vision without action is a daydream. Action without vision is a nightmare.",
+    "Run.",
+    "Out of the frying pan and into the fire.",
+    "Enjoy yourself, while you can",
+    "It's been 84 years.",
+    "Thank you, next...",
+    "To truly find yourself you should play hide and seek alone",
+    "Git is hard, but you're doing better than you think",
+    "It’s the little details that are vital. Little things make big things happen",
+    "In one week's time go outside at 10pm and look up, you'll be suprised with what you find...",
+    "Big journeys begin with a single step.",
+    "Tomorrow will be a better day and if not, there’s always chocolate.",
+    "You have another lightning talk next week. ",
+    "Eat. Code. Sleep. Repeat.",
+    "Fortune is not a function."
+  
   ],
   "image":[
     "image",
@@ -15,7 +31,4 @@
     "image"
   ]
 
-
-
-     
 }
