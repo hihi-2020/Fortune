@@ -39,32 +39,30 @@ class App extends React.Component {
       />
 
     )
-
-
-
   }
 
 
-
-
   render() {
-    const leftCookie = <img src="leftCookie.png" />
-    const rightCookie = <img src="rightCookie.png" />
+    const leftCookie = <img src="leftCookie.svg" />
+    const rightCookie = <img src="rightCookie.svg" />
 
 
     return (
-
+      <>
       <div onClick={this.clickHandler} className="container">
         <h2 className='title'>FORTUNE COOKIE</h2>
 
         <div className={this.state.isOpen ? 'leftCookieOpen' : 'leftCookieClosed'}> {leftCookie} </div>
-    {this.state.isOpen && <div className='fortune'>{this.revealFortune()} {this.revealFortuneSound()}</div>}
+        {this.state.isOpen && <div className='fortune'>{this.revealFortune()} {this.revealFortuneSound()}</div>}
 
         <div className={this.state.isOpen ? 'rightCookieOpen' : 'rightCookieClosed'}>{rightCookie}</div>
+ 
+        <button className='button'>Try Again!</button> 
 
-        <footer className='footer'>Brought to you by: Emily, Olivia and Jess</footer>
 
       </div>
+        <div className='footer'>Brought to you by: Emily, Olivia and Jess</div>
+      </>
     );
   }
 }
