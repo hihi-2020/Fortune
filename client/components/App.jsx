@@ -4,33 +4,43 @@ import Sound from 'react-sound'
 
 
 console.log(data)
+const revealFortune = () => {
+
+  let randomFortuneIndex = Math.floor((Math.random() * data.text.length))
+  return data.text[randomFortuneIndex]
+
+}
+const revealRandomSound = ()=>{
+  let randomSoundsIndex = Math.floor((Math.random() * data.sounds.length))
+  return data.sounds[randomSoundsIndex]
+}
 class App extends React.Component {
 
   state = {
-    isOpen: false
+    isOpen: false,
+    fortune: revealFortune(),
+    sound: revealRandomSound(),
+    isPink: true
   }
 
   clickHandler = () => {
-    console.log('click')
+   
+    setInterval(()=> {
+      // this.toggleBackground()
+    }, 250)
+
     this.setState({
       isOpen: true
     })
   }
 
-  revealFortune = () => {
-
-    let randomFortuneIndex = Math.floor((Math.random() * data.text.length))
-    return data.text[randomFortuneIndex]
-
-  }
 
   revealFortuneSound = () => {
 
-    let randomSoundsIndex = Math.floor((Math.random() * data.sounds.length))
  
     return (
       <Sound
-        url={data.sounds[randomSoundsIndex]}
+        url={this.state.sound}
         playStatus={Sound.status.PLAYING}
         playFromPosition={300 /* in milliseconds */}
         onLoading={this.handleSongLoading}
@@ -41,6 +51,16 @@ class App extends React.Component {
     )
   }
 
+  handleRefresh = () =>{
+    window.location.reload()
+  }
+
+  toggleBackground = () => {
+   
+    this.setState({
+      isPink: false
+    })
+  }
 
   render() {
     const leftCookie = <img src="leftCookie.svg" />
@@ -49,16 +69,16 @@ class App extends React.Component {
 
     return (
       <>
-      <div onClick={this.clickHandler} className="container">
+      <div className="container">
         <h2 className='title'>FORTUNE COOKIE</h2>
 
-        <div className={this.state.isOpen ? 'leftCookieOpen' : 'leftCookieClosed'}> {leftCookie} </div>
-        {this.state.isOpen && <div className='fortune'>{this.revealFortune()} {this.revealFortuneSound()}</div>}
+      
+        <div onClick={this.clickHandler} className={this.state.isOpen ? 'leftCookieOpen' : 'leftCookieClosed'}> {leftCookie} </div>
+        <div onClick={this.clickHandler} className={this.state.isOpen ? 'rightCookieOpen' : 'rightCookieClosed'}>{rightCookie}</div>
 
-        <div className={this.state.isOpen ? 'rightCookieOpen' : 'rightCookieClosed'}>{rightCookie}</div>
- 
-        <button className='button'>Try Again!</button> 
+        {this.state.isOpen && <div className='fortune'>{this.state.fortune} {this.revealFortuneSound()}</div> }
 
+        {this.state.isOpen &&<button onClick={this.handleRefresh}className='button'>Try Again!</button> }
 
       </div>
         <div className='footer'>Brought to you by: Emily, Olivia and Jess</div>
