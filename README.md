@@ -1,6 +1,6 @@
 # Fortune cookie app built as an exercise experimenting with React 
 
-# A starter webpack project for React
+## A starter webpack project for React
 
 This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
 
